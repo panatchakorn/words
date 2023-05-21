@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Scratch Pad</title>
+
+    </head>
+    <style>
+        .center {
+            margin: auto;
+            width: 80%;
+            border: 3px solid green;
+            padding: 5px;
+            text-align:center;
+        }
+        #answerBox{
+            width: 20%;
+            text-align:center;
+            padding:10px;
+            font-size:80pt;
+        }
+        .button{
+            width: 30%;
+            font-size:50pt;
+        }
+    </style>
+    <body>
+        <h1>Guess the word </h1> 
+        <h2 style="color:#006400;font-size:400%;">Scores: <label id="score" value="">0</label></h2>
+        
+    <!--form id="qset"-->
+        
+    <div class="center">
+        
+        <h2 style="color:blue;font-size:600%;"><label id="q" value="word question">word question??</label></h2>
+        
+        <input type="text" id="answerBox" maxlength="1" size="1" onchange="validateAnswer()">
+        <br><br>
+        <!--button id="checkAnswer" class="button" onclick="validateAnswer()">Check My Answer</button-->
+        <button id="next" class="button" onclick="next()">Next</button>
+        <br>
+        <h2 style="color:#6495ED;font-size:400%;"><label id="feedback" value=""></label></h2>
+    </div>
+    <!--/form-->
+    </body>
+    <script src="words.js"></script>
+</html>
