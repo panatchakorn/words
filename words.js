@@ -14,11 +14,13 @@ function load(){
     wordMasked = maskWord(word)
     //document.writeln("wordMasked is " + workMasked)
     displayword(wordMasked)
+    document.getElementById("answerBox").focus();
 }
 
 function next(){
-    load()
     clear()
+    load()
+    
 }
 
 function clear(){
@@ -35,6 +37,9 @@ function randomiseWordSelection(){
     if (wordIndex > max) {
         wordIndex = max
     } 
+    else if(wordIndex < min){
+        workIndex = min
+    }
     return wordset[wordIndex]
 }
 
@@ -53,7 +58,7 @@ function maskWord(wordToMask){
     }
     // mask last letter
     else if (maskIndex == max){
-        newWorkMasked = wordMasked.substring(0,max) + "_"
+        newWordMasked = wordToMask.substring(0,max) + "_"
     }
     else {
        // newWordMasked = wordToMask.substring(0,maskIndex - 1) + "_" + wordToMask.substring(maskIndex)
